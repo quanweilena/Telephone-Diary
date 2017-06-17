@@ -22,6 +22,10 @@ namespace WindowsFormsApp1
         {
             textBox1.Text = "";
             textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            comboBox1.SelectedIndex = -1;
+            textBox1.Focus();
         }
     }
 }
