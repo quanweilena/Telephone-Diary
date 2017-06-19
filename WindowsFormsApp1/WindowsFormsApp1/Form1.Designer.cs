@@ -33,6 +33,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.first = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.last = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.catagory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -42,11 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.first = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.last = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.catagory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +71,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Insert";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -104,8 +105,38 @@
             this.catagory});
             this.dataGridView1.Location = new System.Drawing.Point(78, 297);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(545, 192);
             this.dataGridView1.TabIndex = 9;
+            // 
+            // first
+            // 
+            this.first.HeaderText = "First Name";
+            this.first.Name = "first";
+            this.first.Width = 90;
+            // 
+            // last
+            // 
+            this.last.HeaderText = "Last Name";
+            this.last.Name = "last";
+            this.last.Width = 90;
+            // 
+            // mobile
+            // 
+            this.mobile.HeaderText = "Mobile";
+            this.mobile.Name = "mobile";
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.Width = 140;
+            // 
+            // catagory
+            // 
+            this.catagory.HeaderText = "Catagory";
+            this.catagory.Name = "catagory";
+            this.catagory.Width = 80;
             // 
             // textBox1
             // 
@@ -189,35 +220,6 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Catagory:";
             // 
-            // first
-            // 
-            this.first.HeaderText = "First Name";
-            this.first.Name = "first";
-            this.first.Width = 90;
-            // 
-            // last
-            // 
-            this.last.HeaderText = "Last Name";
-            this.last.Name = "last";
-            this.last.Width = 90;
-            // 
-            // mobile
-            // 
-            this.mobile.HeaderText = "Mobile";
-            this.mobile.Name = "mobile";
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            this.email.Width = 140;
-            // 
-            // catagory
-            // 
-            this.catagory.HeaderText = "Catagory";
-            this.catagory.Name = "catagory";
-            this.catagory.Width = 80;
-            // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -256,6 +258,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
