@@ -62,5 +62,25 @@ namespace WindowsFormsApp1
             MessageBox.Show("Insert successfully!");
             Display();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand(@"DELETE FROM Mobiles
+                                            WHERE (Mobile = '" + textBox3.Text + "')", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Delete successfully!");
+            Display();
+        }
+
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBox1.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            textBox2.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            textBox3.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            textBox4.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            comboBox1.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+        }
     }
 }
