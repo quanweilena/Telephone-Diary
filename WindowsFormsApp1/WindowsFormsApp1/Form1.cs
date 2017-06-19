@@ -93,5 +93,22 @@ namespace WindowsFormsApp1
             MessageBox.Show("Update successfully!");
             Display();
         }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            SqlDataAdapter sda = new SqlDataAdapter("Select * from Mobiles WHERE Mobile like '%" + textBox5.Text + "%' or First like '%" + textBox5.Text + "%' or Last like '%" + textBox5.Text + "%' or Email like '%" + textBox5.Text + "%' or Catagory like '%" + textBox5.Text + "%' ", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView1.Rows.Clear();
+            foreach (DataRow item in dt.Rows)
+            {
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = item["First"].ToString();
+                dataGridView1.Rows[n].Cells[1].Value = item[1].ToString();
+                dataGridView1.Rows[n].Cells[2].Value = item[2].ToString();
+                dataGridView1.Rows[n].Cells[3].Value = item[3].ToString();
+                dataGridView1.Rows[n].Cells[4].Value = item[4].ToString();
+            }
+        }
     }
 }
