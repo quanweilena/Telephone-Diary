@@ -82,5 +82,16 @@ namespace WindowsFormsApp1
             textBox4.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
             comboBox1.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand(@"UPDATE  Mobiles
+                    SET         First ='" + textBox1.Text + "', Last ='" + textBox2.Text + "', Mobile ='" + textBox3.Text + "', Email ='" + textBox4.Text + "', Catagory = '" + comboBox1.Text + "'   WHERE ( Mobile = '" + textBox3.Text + "')", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Update successfully!");
+            Display();
+        }
     }
 }
